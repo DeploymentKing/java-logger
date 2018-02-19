@@ -1,7 +1,6 @@
 package io.thinkstack.logger.slf4j;
 
 import com.github.ricksbrown.cowsay.Cowsay;
-import jfortune.Cookie;
 import jfortune.Fortune;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,21 +11,18 @@ public class CowsayOutput {
     logger.info("Initiate Cowsay Loop");
 
     Fortune fortune = new Fortune();
-    Cookie cookie = fortune.getCookie();
 
-    String[] cowsayArgs = new String[]{"-f", "tux", cookie.toString()};
+    Integer loopCount = (Integer) PropertyHelper.getProperty("logger.loopCount", 10);
+    Integer sleep = (Integer) PropertyHelper.getProperty("logger.sleep", 500);
 
-    for (int i = 0; i < 2; i++) {
-      logger.info(String.format("I am loop iteration #%s", i));
+    for (int i = 0; i < loopCount; i++) {
+      logger.info(String.format("#%s %s", i, Cowsay.say(new String[]{"-f", "tux", fortune.getCookie().toString()})));
       try {
-        Thread.sleep(500);
+        Thread.sleep(sleep);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
     }
-
-    String result = Cowsay.say(cowsayArgs);
-    logger.info(result);
 
     if(logger.isDebugEnabled()) {
       logger.debug("Java logging level is DEBUG enabled");

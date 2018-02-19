@@ -22,7 +22,7 @@ public class SingleLineOutput {
       logger.info(String.format("#%s %s", i,
           cookie.getShortCookie()
               .toString()
-              .replaceAll(System.lineSeparator(), "; ")
+              .replaceAll(System.lineSeparator(), " ")
               .replaceAll("\t", "")));
       Thread.sleep(sleep);
     }
@@ -30,8 +30,6 @@ public class SingleLineOutput {
     if (logger.isDebugEnabled()) {
       logger.debug("java logging level is DEBUG Enabled");
     }
-
-    System.exit(0);
   }
 
   private static Integer getProperty(Properties properties, String key, Integer defaultValue) {

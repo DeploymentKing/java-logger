@@ -4,13 +4,23 @@
     <Console name="Console" target="SYSTEM_OUT">
       <PatternLayout pattern="%-5p %d [%t] %c: %m%n"/>
     </Console>
+    <RollingFile name="RollingFile" fileName="./output.log"
+                 filePattern="./archive/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+      <PatternLayout>
+        <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy />
+        <SizeBasedTriggeringPolicy size="250 MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="20"/>
+    </RollingFile>
   </Appenders>
 
   <Loggers>
-    <Logger name="io.thinkstack" level="DEBUG"/>
-
     <Root level="DEBUG">
       <AppenderRef ref="Console"/>
+      <AppenderRef ref="RollingFile" level="INFO"/>
     </Root>
   </Loggers>
 

@@ -5,6 +5,11 @@ Simple Java application that uses jfortune and cowsay to output logs.
 
 <!-- toc -->
 
+- [Background](#background)
+- [Pre-requisites](#pre-requisites)
+- [Build the JAR](#build-the-jar)
+- [Run the JAR](#run-the-jar)
+
 <!-- tocstop -->
 
 ## Background

@@ -1,4 +1,4 @@
-package io.thinkstack.logger.sl4j;
+package io.thinkstack.logger.slf4j;
 
 import jfortune.*;
 import org.slf4j.Logger;

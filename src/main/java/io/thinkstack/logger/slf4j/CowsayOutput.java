@@ -1,4 +1,4 @@
-package io.thinkstack.logger.sl4j;
+package io.thinkstack.logger.slf4j;
 
 import com.github.ricksbrown.cowsay.Cowsay;
 import jfortune.Cookie;
@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class CowsayOutput {
-  public static void main(String[] args) throws InterruptedException {
+  public static void main(String[] args) {
     Logger logger = LoggerFactory.getLogger(CowsayOutput.class);
     logger.info("Initiate Cowsay Loop");
 

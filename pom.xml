@@ -125,7 +125,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>io.thinkstack.logger.sl4j.SingleLineOutput</mainClass>
+              <mainClass>io.thinkstack.logger.slf4j.SingleLineOutput</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>

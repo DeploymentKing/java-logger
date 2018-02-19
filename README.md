@@ -8,7 +8,9 @@ Simple Java application that uses jfortune and cowsay to output logs.
 - [Background](#background)
 - [Pre-requisites](#pre-requisites)
 - [Build the JAR](#build-the-jar)
-- [Run the JAR](#run-the-jar)
+- [Run the JAR via default entry point](#run-the-jar-via-default-entry-point)
+- [Run the JAR via named entry point](#run-the-jar-via-named-entry-point)
+- [References](#references)
 
 <!-- tocstop -->
 

@@ -33,9 +33,11 @@ brew install git maven
 mvn clean install
 ```
 
-## Run the JAR
+## Run the JAR via default entry point
 ```bash
-java -Dlogger.loopCount=50 -Dlogger.sleep=100 -jar target/java-logger-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+export LOGGER_LOOP_COUNT=30
+export LOGGER_THREAD_SLEEP=500
+java -Dlogger.loopCount=${LOGGER_LOOP_COUNT} -Dlogger.sleep=${LOGGER_THREAD_SLEEP} -jar target/java-logger-1.0.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
 Here are the available options:
@@ -44,3 +46,21 @@ Here are the available options:
 | --- | --- |
 | logger.loopCount | (Optional) The number of times to iterate. Default value = 10 |
 | logger.sleep | (Optional) The number of milliseconds to sleep between each iteration of the loop. Default value = 500 |
+
+## Run the JAR via named entry point
+```bash
+export LOGGER_ENTRY_POINT=30
+java -cp target/java-logger-1.0.0-SNAPSHOT-jar-with-dependencies.jar io.thinkstack.logger.slf4j.${LOGGER_ENTRY_POINT}
+```
+
+Here are the available entry points:
+
+| Entry Point | Description |
+| --- | --- |
+| HelloWorld | Outputs a single Hello World at INFO level plus a message at DEBUG level if enabled |
+| CowsayOutput | Outputs a loop of single line INFO messages and then a fortune cookie message delivered via Cowsay |
+| SingleLineOutput | Outputs a configurable loop of messages generated via fortune cookies |
+
+## References
+- [Cowsay](https://github.com/RickSBrown/cowsay)
+- [jfortune](https://github.com/oboehm/jfortune)

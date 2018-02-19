@@ -11,8 +11,8 @@ public class CowsayOutput {
     Logger logger = LoggerFactory.getLogger(CowsayOutput.class);
     logger.info("Initiate Cowsay Loop");
 
-    Fortune test = new Fortune();
-    Cookie cookie = test.getCookie();
+    Fortune fortune = new Fortune();
+    Cookie cookie = fortune.getCookie();
 
     String[] cowsayArgs = new String[]{"-f", "tux", cookie.toString()};
 
@@ -29,7 +29,7 @@ public class CowsayOutput {
     logger.info(result);
 
     if(logger.isDebugEnabled()) {
-      logger.debug("java logging level is DEBUG Enabled");
+      logger.debug("Java logging level is DEBUG enabled");
     }
   }
 }

@@ -9,7 +9,7 @@ public class HelloWorld {
     logger.info("Hello World");
 
     if(logger.isDebugEnabled()) {
-      logger.debug("java logging level is DEBUG Enabled");
+      logger.debug("Java logging level is DEBUG enabled");
     }
   }
 }

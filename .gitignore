@@ -24,4 +24,5 @@ hs_err_pid*
 # Maven
 log/
 target/
+archive/
 output.log

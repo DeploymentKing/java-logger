@@ -13,8 +13,8 @@ public class SingleLineOutput {
 
     Fortune fortune = new Fortune(Locale.ENGLISH);
 
-    Integer loopCount = (Integer) PropertyHelper.getProperty("logger.loopCount", 10);
-    Integer sleep = (Integer) PropertyHelper.getProperty("logger.sleep", 500);
+    Integer loopCount = Integer.valueOf(PropertyHelper.getProperty("logger.loopCount", "10"));
+    Integer sleep = Integer.valueOf(PropertyHelper.getProperty("logger.sleep", "500"));
 
     for (int i = 0; i < loopCount; i++) {
       logger.info(String.format("#%s %s", i,
@@ -29,6 +29,4 @@ public class SingleLineOutput {
       logger.debug("Java logging level is DEBUG enabled");
     }
   }
-
-
 }

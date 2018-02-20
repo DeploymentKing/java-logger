@@ -14,8 +14,8 @@ public class CowsayOutput {
 
     Fortune fortune = new Fortune(Locale.ENGLISH);
 
-    Integer loopCount = (Integer) PropertyHelper.getProperty("logger.loopCount", 10);
-    Integer sleep = (Integer) PropertyHelper.getProperty("logger.sleep", 500);
+    Integer loopCount = Integer.valueOf(PropertyHelper.getProperty("logger.loopCount", "10"));
+    Integer sleep = Integer.valueOf(PropertyHelper.getProperty("logger.sleep", "500"));
 
     for (int i = 0; i < loopCount; i++) {
       String[] cowsayArgs = i % 2 == 0 ?

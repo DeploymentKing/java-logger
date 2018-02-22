@@ -58,7 +58,7 @@ Here are the available options:
 ```bash
 export LOGGER_ENTRY_POINT=30
 export LOGGER_FILE_NAME=/var/log/java-logger/output.log
-java -Dlogger.fileName${LOGGER_FILE_NAME} -cp target/java-logger-1.0.0-SNAPSHOT-jar-with-dependencies.jar io.thinkstack.logger.slf4j.${LOGGER_ENTRY_POINT}
+java -Dlogger.fileName${LOGGER_FILE_NAME} -cp target/java-logger-1.0.2-jar-with-dependencies.jar io.thinkstack.logger.slf4j.${LOGGER_ENTRY_POINT}
 ```
 
 Here are the available entry points:

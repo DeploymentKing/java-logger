@@ -37,10 +37,10 @@ mvn clean install
 
 ## Run the JAR via default entry point
 ```bash
-export LOGGER_FILE_NAME=./output.log
+export LOGGER_FILE_PATH=./output.log
 export LOGGER_LOOP_COUNT=30
 export LOGGER_THREAD_SLEEP=500
-java -Dlogger.fileName${LOGGER_FILE_NAME} \
+java -Dlogger.fileName${LOGGER_FILE_PATH} \
      -Dlogger.loopCount=${LOGGER_LOOP_COUNT} \
      -Dlogger.sleep=${LOGGER_THREAD_SLEEP} \
      -jar target/java-logger-1.0.2-jar-with-dependencies.jar
@@ -57,8 +57,8 @@ Here are the available options:
 ## Run the JAR via named entry point
 ```bash
 export LOGGER_ENTRY_POINT=30
-export LOGGER_FILE_NAME=/var/log/java-logger/output.log
-java -Dlogger.fileName${LOGGER_FILE_NAME} -cp target/java-logger-1.0.2-jar-with-dependencies.jar io.thinkstack.logger.slf4j.${LOGGER_ENTRY_POINT}
+export LOGGER_FILE_PATH=/var/log/java-logger/output.log
+java -Dlogger.fileName${LOGGER_FILE_PATH} -cp target/java-logger-1.0.2-jar-with-dependencies.jar io.thinkstack.logger.slf4j.${LOGGER_ENTRY_POINT}
 ```
 
 Here are the available entry points:

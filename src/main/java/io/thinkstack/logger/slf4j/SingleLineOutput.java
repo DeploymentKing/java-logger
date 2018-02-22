@@ -18,9 +18,9 @@ public class SingleLineOutput {
     Integer loopCount = Integer.valueOf(PropertyHelper.getProperty("logger.loopCount", "10"));
     Integer sleep = Integer.valueOf(PropertyHelper.getProperty("logger.sleep", "500"));
 
-    String outputFile = PropertyHelper.getProperty("logger.fileName", null);
+    String outputFile = PropertyHelper.getProperty("logger.filePath", null);
     if(outputFile == null || outputFile.isEmpty()){
-      throw new IllegalArgumentException("Destination file location has NOT been specified using logger.fileName");
+      throw new IllegalArgumentException("Destination file location has NOT been specified using logger.filePath");
     }
 
     for (int i = 0; i < loopCount; i++) {

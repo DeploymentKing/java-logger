@@ -2,13 +2,13 @@
 <Configuration>
   <Appenders>
     <Console name="Console" target="SYSTEM_OUT">
-      <PatternLayout pattern="%-5p %d [%t] %c: %m%n"/>
+      <PatternLayout pattern="%d %p [%t] %c %m%n"/>
     </Console>
     <!-- Default location of logging file set to output.log -->
     <RollingFile name="RollingFile" fileName="${sys:logger.filePath:-./output.log}"
                  filePattern="./archive/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
       <PatternLayout>
-        <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+        <Pattern>%d %p [%t] %c %m%n</Pattern>
       </PatternLayout>
       <Policies>
         <TimeBasedTriggeringPolicy />

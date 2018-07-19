@@ -43,7 +43,7 @@ export LOGGER_THREAD_SLEEP=500
 java -Dlogger.filePath${LOGGER_FILE_PATH} \
      -Dlogger.loopCount=${LOGGER_LOOP_COUNT} \
      -Dlogger.sleep=${LOGGER_THREAD_SLEEP} \
-     -jar target/java-logger-1.0.2-jar-with-dependencies.jar
+     -jar target/java-logger-1.0.5-jar-with-dependencies.jar
 ```
 
 Here are the available options:
@@ -58,7 +58,7 @@ Here are the available options:
 ```bash
 export LOGGER_ENTRY_POINT=30
 export LOGGER_FILE_PATH=/var/log/java-logger/output.log
-java -Dlogger.filePath${LOGGER_FILE_PATH} -cp target/java-logger-1.0.2-jar-with-dependencies.jar io.thinkstack.logger.slf4j.${LOGGER_ENTRY_POINT}
+java -Dlogger.filePath${LOGGER_FILE_PATH} -cp target/java-logger-1.0.5-jar-with-dependencies.jar io.thinkstack.logger.slf4j.${LOGGER_ENTRY_POINT}
 ```
 
 Here are the available entry points:
